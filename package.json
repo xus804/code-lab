@@ -1,0 +1,12 @@
+{
+  "name": "codelab-ultimate",
+  "version": "2.0.0",
+  "description": "Premium local code execution platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": ["compiler", "ide", "web", "local"],
+  "author": "",
+  "license": "MIT"
+}
