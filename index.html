@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeLab Ultimate</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/dracula.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/clike/clike.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/php/php.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/go/go.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/rust/rust.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="brand">
+                <div class="logo-icon">⚡</div>
+                <div class="logo-text">CodeLab <span>PRO</span></div>
+            </div>
+            
+            <div class="controls">
+                <div class="control-group">
+                    <label>Language</label>
+                    <div class="select-wrapper">
+                        <select id="langSelect">
+                            <option value="javascript">JavaScript (Node)</option>
+                            <option value="python">Python 3</option>
+                            <option value="java">Java</option>
+                            <option value="cpp">C++</option>
+                            <option value="csharp">C#</option>
+                            <option value="go">Go</option>
+                            <option value="rust">Rust</option>
+                            <option value="php">PHP</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button id="resetBtn" class="btn secondary" title="Reset to default code">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                        <span>Reset</span>
+                    </button>
+                    <button id="runBtn" class="btn primary" title="Run Code (Ctrl+Enter)">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        <span>Run Code</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="workspace">
+            <div class="editor-panel">
+                <div class="panel-header">
+                    <span>Source Code</span>
+                    <span class="status" id="saveStatus">Autosaved</span>
+                </div>
+                <div id="editor"></div>
+            </div>
+
+            <div class="output-panel">
+                <div class="panel-header">
+                    <span>Terminal Output</span>
+                    <button id="clearBtn" class="btn-text">Clear</button>
+                </div>
+                <div id="output" class="terminal">
+                    <div class="placeholder">Ready to execute. Press Run or Ctrl+Enter.</div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <div class="server-status">
+                <span class="indicator online"></span> Server Connected
+            </div>
+            <div class="shortcuts">
+                <span>Run: <b>Ctrl + Enter</b></span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
